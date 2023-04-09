@@ -11,7 +11,7 @@ const TodoItem: FC = () => {
       <div className="inline-flex items-center justify-between">
         <CustomCheckBox />
         <p className="text-gray-900 break-all text-sm pr-2">
-          Schedule a dinner withasdasdasdasdadsdadasdasdsadasd
+          Schedule a dinner
         </p>
       </div>
       <div className="flex gap-1">
