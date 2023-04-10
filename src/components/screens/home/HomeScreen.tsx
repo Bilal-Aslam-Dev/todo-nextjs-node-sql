@@ -17,8 +17,8 @@ const HomeScreen: FC = () => {
             <ListIcon className="w-10 stroke-[#b281c5]" strokeWidth="1.8" />
           </div>
           <div className="all-todos mt-7">
-            <TodoItem />
-            <TodoItem />
+            <TodoItem id="1" />
+            <TodoItem id="2" />
           </div>
           <div className="absolute right-[50%] translate-x-[50%] -bottom-8">
             <AddTodo />

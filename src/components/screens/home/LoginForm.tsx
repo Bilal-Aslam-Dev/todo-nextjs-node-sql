@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 
 import { CommonInput, PasswordInput, FormikWrapper } from '@/components/shared'
-import loginSchema from '@/utils/ValidationSchemas'
+import { loginSchema } from '@/utils/ValidationSchemas'
 
 const LoginForm: FC = () => {
   const handleSubmit = (values: any): any => {

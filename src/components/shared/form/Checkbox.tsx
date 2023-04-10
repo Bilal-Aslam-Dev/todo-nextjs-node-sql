@@ -1,11 +1,17 @@
 import { type FC } from 'react'
 
-import { Checkbox } from '@material-tailwind/react'
+import { Checkbox, type CheckboxProps } from '@material-tailwind/react'
 
-const CustomCheckBox: FC = () => {
+type CustomCheckboxProps = CheckboxProps & {
+  color?: string | undefined
+  id: string
+}
+
+const CustomCheckBox: FC<CustomCheckboxProps> = ({ color, id }) => {
   return (
     <Checkbox
-      color="indigo"
+      id={id}
+      color={color ?? 'indigo'}
       icon={
         <svg
           xmlns="http://www.w3.org/2000/svg"

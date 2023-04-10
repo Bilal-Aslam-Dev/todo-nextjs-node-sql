@@ -6,6 +6,7 @@ import EditIcon from './edit-icon.svg'
 import DeleteIcon from './delete-icon.svg'
 import AddIcon from './add-icon.svg'
 import CloseIcon from './close-icon.svg'
+import TickIcon from './tick-icon.svg'
 
 export {
   EyeIcon,
@@ -16,4 +17,5 @@ export {
   EditIcon,
   DeleteIcon,
   CloseIcon,
+  TickIcon,
 }
