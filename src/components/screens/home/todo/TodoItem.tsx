@@ -1,6 +1,8 @@
 import { type FC } from 'react'
 import { useState } from 'react'
 
+import { useTodos } from '@/hooks/useTodo'
+
 import { CustomCheckBox, ConfirmAction } from '@/components/shared'
 import { DeleteIcon, EditIcon } from '@/assets/icons'
 
@@ -8,9 +10,11 @@ import CustomButton from '@/components/shared/button/CustomButton'
 
 interface TodoItemProps {
   id: string
+  text: string
 }
 
-const TodoItem: FC<TodoItemProps> = ({ id }) => {
+const TodoItem: FC<TodoItemProps> = ({ id, text }) => {
+  const { deleteTodo } = useTodos()
   const [confirmAction, setConfirmAction] = useState<boolean>(false)
   const handleOpenConfirmAction = (): void => {
     setConfirmAction(!confirmAction)
@@ -22,9 +26,7 @@ const TodoItem: FC<TodoItemProps> = ({ id }) => {
         <div className="relative">
           <CustomCheckBox id={id} color="blue" />
         </div>
-        <p className="text-gray-900 break-all text-sm pr-2">
-          Schedule a dinner
-        </p>
+        <p className="text-gray-900 break-all text-sm pr-2">{text}</p>
       </div>
       <div className="flex gap-1">
         <CustomButton>
@@ -33,6 +35,9 @@ const TodoItem: FC<TodoItemProps> = ({ id }) => {
         <CustomButton onClick={handleOpenConfirmAction}>
           <DeleteIcon className="w-5 text-red-600" strokeWidth={1.7} />
           <ConfirmAction
+            onAccept={() => {
+              deleteTodo(id)
+            }}
             open={confirmAction}
             handleOpen={handleOpenConfirmAction}
           />

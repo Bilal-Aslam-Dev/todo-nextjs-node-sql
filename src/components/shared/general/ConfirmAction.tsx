@@ -2,14 +2,21 @@ import type { FC } from 'react'
 
 import Popup from './Popup'
 
+import CustomButton from '../button/CustomButton'
+
 import { TickIcon, CloseIcon } from '@/assets/icons'
 
 interface ConfirmActionProps {
   open: boolean
   handleOpen: () => void
+  onAccept: () => any
 }
 
-const ConfirmAction: FC<ConfirmActionProps> = ({ open, handleOpen }) => {
+const ConfirmAction: FC<ConfirmActionProps> = ({
+  open,
+  handleOpen,
+  onAccept,
+}) => {
   return (
     <Popup
       size={'max-w-[90%] sm:max-w-[340px] min-w-0'}
@@ -18,12 +25,18 @@ const ConfirmAction: FC<ConfirmActionProps> = ({ open, handleOpen }) => {
     >
       <p>Are you sure you want to delete this todo?</p>
       <div className="flex items-center border-t mt-1.5">
-        <div className="w-6/12 bg-red-200 bg-opacity-30 hover:bg-opacity-50 transition-all rounded-l h-full py-3">
+        <CustomButton
+          onClick={handleOpen}
+          className="w-6/12 bg-red-300 bg-opacity-60 hover:bg-opacity-50 hover:bg-red-300 transition-all rounded-l h-full py-3 rounded-r-none"
+        >
           <CloseIcon className="w-5 mx-auto" strokeWidth={2} />
-        </div>
-        <div className="w-6/12  bg-green-200 bg-opacity-30 hover:bg-opacity-50 transition-all rounded-r h-full py-3">
+        </CustomButton>
+        <CustomButton
+          onClick={onAccept}
+          className="w-6/12 rounded-l-none bg-green-300 bg-opacity-60 hover:bg-green-300 hover:bg-opacity-50 transition-all rounded-r h-full py-3"
+        >
           <TickIcon className="w-5 mx-auto" strokeWidth={2} />
-        </div>
+        </CustomButton>
       </div>
     </Popup>
   )

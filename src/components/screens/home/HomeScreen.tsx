@@ -1,28 +1,17 @@
 import { type FC, useEffect } from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
-
-import { getAllTodos } from '@/store/actions/todo/getAllTodoAction'
-
-import { ListIcon } from '@/assets/icons'
+import { useTodos } from '@/hooks/useTodo'
 
 import TodoItem from './todo/TodoItem'
 import AddTodo from './todo/AddTodo'
 
-import { type RootState, type TodosState } from '@/types/todoTypes'
+import { ListIcon } from '@/assets/icons'
 
 const HomeScreen: FC = () => {
-  const todos = useSelector((state: RootState) => state.todos.todos ?? [])
-
-  const loading = useSelector(
-    (state: { todos: any; todo: TodosState }) => state.todos.loading
-  )
-  const dispatch = useDispatch()
-
-  console.log(loading, todos)
+  const { todos, fetchTodosData } = useTodos()
 
   useEffect(() => {
-    dispatch(getAllTodos())
+    fetchTodosData()
   }, [])
   return (
     <>
@@ -35,8 +24,11 @@ const HomeScreen: FC = () => {
             <ListIcon className="w-10 stroke-[#b281c5]" strokeWidth="1.8" />
           </div>
           <div className="all-todos mt-7">
-            <TodoItem id="1" />
-            <TodoItem id="2" />
+            {todos.map((i: Record<string, any>) => {
+              return (
+                <TodoItem text={i.text} key={JSON.stringify(i)} id={i.id} />
+              )
+            })}
           </div>
           <div className="absolute right-[50%] translate-x-[50%] -bottom-8">
             <AddTodo />

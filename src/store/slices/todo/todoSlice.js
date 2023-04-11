@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { createTodo } from '../../actions/todo/createTodoAction'
-import { deleteTodo } from '../../actions/todo/deleteTodoAction'
-import { getAllTodos } from '../../actions/todo/getAllTodoAction'
-import { updateTodo } from '../../actions/todo/updateTodoAction'
+import {
+  getAllTodos,
+  deleteTodo,
+  updateTodo,
+  createTodo,
+} from '../../actions/todo-actions/'
 
 const todosSlice = createSlice({
   name: 'todos',
