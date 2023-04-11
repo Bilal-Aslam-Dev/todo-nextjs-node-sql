@@ -1,11 +1,29 @@
-import type { FC } from 'react'
+import { type FC, useEffect } from 'react'
+
+import { useSelector, useDispatch } from 'react-redux'
+
+import { getAllTodos } from '@/store/actions/todo/getAllTodoAction'
 
 import { ListIcon } from '@/assets/icons'
 
 import TodoItem from './todo/TodoItem'
 import AddTodo from './todo/AddTodo'
 
+import { type RootState, type TodosState } from '@/types/todoTypes'
+
 const HomeScreen: FC = () => {
+  const todos = useSelector((state: RootState) => state.todos.todos ?? [])
+
+  const loading = useSelector(
+    (state: { todos: any; todo: TodosState }) => state.todos.loading
+  )
+  const dispatch = useDispatch()
+
+  console.log(loading, todos)
+
+  useEffect(() => {
+    dispatch(getAllTodos())
+  }, [])
   return (
     <>
       <div className="home-gradient px-3 h-screen w-screen flex flex-col items-center">
