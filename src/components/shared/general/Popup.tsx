@@ -19,7 +19,9 @@ const Popup: FC<PopupTypes> = ({ open, handleOpen, children, size }) => {
   return (
     <>
       <Dialog
-        className={`w-full ${size ?? 'max-w-[90%] sm:max-w-[500px]'}`}
+        className={`w-full min-w-auto ${
+          size ?? 'max-w-[90%] sm:max-w-[500px]'
+        }`}
         open={open}
         handler={handleOpen}
         onClick={handleClickInside}

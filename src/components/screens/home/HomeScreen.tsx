@@ -2,8 +2,8 @@ import type { FC } from 'react'
 
 import { ListIcon } from '@/assets/icons'
 
-import TodoItem from './TodoItem'
-import AddTodo from './AddTodo'
+import TodoItem from './todo/TodoItem'
+import AddTodo from './todo/AddTodo'
 
 const HomeScreen: FC = () => {
   return (

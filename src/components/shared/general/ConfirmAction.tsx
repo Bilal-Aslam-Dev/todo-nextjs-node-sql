@@ -11,8 +11,12 @@ interface ConfirmActionProps {
 
 const ConfirmAction: FC<ConfirmActionProps> = ({ open, handleOpen }) => {
   return (
-    <Popup size={'max-w-[200px]'} handleOpen={handleOpen} open={open}>
-      <p>Are you you want to delete this todo?</p>
+    <Popup
+      size={'max-w-[90%] sm:max-w-[340px] min-w-0'}
+      handleOpen={handleOpen}
+      open={open}
+    >
+      <p>Are you sure you want to delete this todo?</p>
       <div className="flex items-center border-t mt-1.5">
         <div className="w-6/12 bg-red-200 bg-opacity-30 hover:bg-opacity-50 transition-all rounded-l h-full py-3">
           <CloseIcon className="w-5 mx-auto" strokeWidth={2} />
