@@ -27,13 +27,13 @@ const ConfirmAction: FC<ConfirmActionProps> = ({
       <div className="flex items-center border-t mt-1.5">
         <CustomButton
           onClick={handleOpen}
-          className="w-6/12 bg-red-300 bg-opacity-60 hover:bg-opacity-50 hover:bg-red-300 transition-all rounded-l h-full py-3 rounded-r-none"
+          className="w-6/12 bg-red-200 bg-opacity-70 hover:bg-opacity-50 hover:bg-red-400 transition-all rounded-l h-full py-3 rounded-r-none"
         >
           <CloseIcon className="w-5 mx-auto" strokeWidth={2} />
         </CustomButton>
         <CustomButton
           onClick={onAccept}
-          className="w-6/12 rounded-l-none bg-green-300 bg-opacity-60 hover:bg-green-300 hover:bg-opacity-50 transition-all rounded-r h-full py-3"
+          className="w-6/12 rounded-l-none bg-green-200 bg-opacity-70 hover:bg-green-400 hover:bg-opacity-50 transition-all rounded-r h-full py-3"
         >
           <TickIcon className="w-5 mx-auto" strokeWidth={2} />
         </CustomButton>

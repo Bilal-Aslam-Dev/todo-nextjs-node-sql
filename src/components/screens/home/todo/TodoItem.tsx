@@ -15,7 +15,9 @@ interface TodoItemProps {
 
 const TodoItem: FC<TodoItemProps> = ({ id, text }) => {
   const { deleteTodo } = useTodos()
+
   const [confirmAction, setConfirmAction] = useState<boolean>(false)
+
   const handleOpenConfirmAction = (): void => {
     setConfirmAction(!confirmAction)
   }

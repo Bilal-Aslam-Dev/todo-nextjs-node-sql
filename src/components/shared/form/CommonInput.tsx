@@ -1,17 +1,20 @@
-import type { FC } from 'react'
+import { type FC } from 'react'
+
 import { Field, ErrorMessage } from 'formik'
 
 interface IPType {
   inpName: string
   type: string
   errorName: string
+  inputRef?: any | undefined
 }
 
-const CommonInput: FC<IPType> = ({ inpName, type, errorName }) => {
+const CommonInput: FC<IPType> = ({ inpName, type, errorName, inputRef }) => {
   return (
     <>
       <Field
-        className="block w-full text-gray-800 py-2.5 px-4 bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        innerRef={inputRef}
+        className="block w-full text-gray-800 py-2.5 px-4 bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
         placeholder={`Enter ${inpName}`}
         name={inpName}
         type={type}
