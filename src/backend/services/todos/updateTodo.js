@@ -4,7 +4,6 @@ export const updateTodo = async (_req, _res) => {
   try {
     const { id } = _req.query
     const { text, status } = _req.body
-
     const [insert] = await pool.query(
       'UPDATE todolist SET text = ?, status = ? WHERE id = ?',
       [text, status, id]

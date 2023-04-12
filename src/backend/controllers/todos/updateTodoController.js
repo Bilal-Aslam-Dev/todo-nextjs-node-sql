@@ -3,8 +3,7 @@ import { updateTodo } from '@/backend/services/todos/updateTodo'
 export const updateTodoController = async (_req, _res) => {
   try {
     const { text, status } = _req.body
-
-    if (!text || !status) {
+    if (!text && !status) {
       return _res
         .status(401)
         .send('Body should include updated text and status')

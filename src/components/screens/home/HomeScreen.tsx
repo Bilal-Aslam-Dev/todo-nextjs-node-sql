@@ -20,13 +20,18 @@ const HomeScreen: FC = () => {
           My Todos.
         </h1>
         <div className="w-full max-w-[500px] relative rounded-lg shadow-xl pt-4 px-3.5 pb-14 bg-white">
-          <div className="w-full pl-10 border-b border-gray-300 pb-3">
+          <div className="w-full flex justify-between items-center pl-10 border-b border-gray-300 pb-3">
             <ListIcon className="w-10 stroke-[#b281c5]" strokeWidth="1.8" />
           </div>
           <div className="all-todos mt-7">
             {todos.map((i: Record<string, any>) => {
               return (
-                <TodoItem text={i.text} key={JSON.stringify(i)} id={i.id} />
+                <TodoItem
+                  status={i.status}
+                  text={i.text}
+                  key={JSON.stringify(i)}
+                  id={i.id}
+                />
               )
             })}
           </div>

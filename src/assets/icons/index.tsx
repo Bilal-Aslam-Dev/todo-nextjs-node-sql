@@ -7,6 +7,7 @@ import DeleteIcon from './delete-icon.svg'
 import AddIcon from './add-icon.svg'
 import CloseIcon from './close-icon.svg'
 import TickIcon from './tick-icon.svg'
+import Loader from './loader.svg'
 
 export {
   EyeIcon,
@@ -18,4 +19,5 @@ export {
   DeleteIcon,
   CloseIcon,
   TickIcon,
+  Loader,
 }

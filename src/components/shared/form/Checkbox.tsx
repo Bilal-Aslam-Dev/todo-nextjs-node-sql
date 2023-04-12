@@ -5,9 +5,15 @@ import { Checkbox, type CheckboxProps } from '@material-tailwind/react'
 type CustomCheckboxProps = CheckboxProps & {
   color?: string | undefined
   id: string
+  isChecked: number
 }
 
-const CustomCheckBox: FC<CustomCheckboxProps> = ({ color, id }) => {
+const CustomCheckBox: FC<CustomCheckboxProps> = ({
+  color,
+  id,
+  onChange,
+  isChecked,
+}) => {
   return (
     <Checkbox
       id={id}
@@ -28,7 +34,12 @@ const CustomCheckBox: FC<CustomCheckboxProps> = ({ color, id }) => {
           />
         </svg>
       }
-      defaultChecked={false}
+      onChange={e => {
+        if (onChange != null) {
+          onChange(e)
+        }
+      }}
+      checked={isChecked === 1 ?? false}
     />
   )
 }
