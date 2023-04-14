@@ -7,7 +7,7 @@ import CustomButton from '@/components/shared/button/CustomButton'
 
 import { Popup, CommonInput, FormikWrapper } from '@/components/shared'
 
-import { AddtodoSchema } from '@/utils/ValidationSchemas'
+import { todoSchema } from '@/utils/ValidationSchemas'
 
 const AddTodo: FC = () => {
   const { createTodo } = useTodos()
@@ -40,7 +40,7 @@ const AddTodo: FC = () => {
         <FormikWrapper
           initialValues={{ todo: '' }}
           onSubmit={handleSubmit}
-          validationSchema={AddtodoSchema}
+          validationSchema={todoSchema}
         >
           <CommonInput
             inputRef={inputRef}

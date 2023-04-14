@@ -6,6 +6,7 @@ type CustomCheckboxProps = CheckboxProps & {
   color?: string | undefined
   id: string
   isChecked: number
+  onChange: () => void
 }
 
 const CustomCheckBox: FC<CustomCheckboxProps> = ({
@@ -35,9 +36,7 @@ const CustomCheckBox: FC<CustomCheckboxProps> = ({
         </svg>
       }
       onChange={e => {
-        if (onChange != null) {
-          onChange(e)
-        }
+        onChange(e)
       }}
       checked={isChecked === 1 ?? false}
     />

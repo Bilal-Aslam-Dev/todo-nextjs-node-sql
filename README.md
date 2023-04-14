@@ -12,16 +12,6 @@ yarn dev
 pnpm dev
 ```
 
-## Tools Confgiured
+## Instructions
 
-1- Typescript
-2- Husky (lint-staged)
-3- Eslint/Prettier
-
-## Dependencies and Libraries
-
-3- TailwindCSS
-4- Formik (form handler)
-5- Yup (form validator)
-
-Check package.json for more information
+import SQL database named "todolist.sql" from the root directory.

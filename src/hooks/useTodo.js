@@ -13,7 +13,7 @@ export const useTodos = () => {
   const error = useSelector(state => state.todos.error)
   const dispatch = useDispatch()
 
-  const fetchTodosData = () => {
+  const fetchTodos = () => {
     dispatch(getAllTodosAction())
   }
 
@@ -32,7 +32,7 @@ export const useTodos = () => {
     todos,
     loading,
     error,
-    fetchTodosData,
+    fetchTodos,
     updateTodo,
     deleteTodo,
     createTodo,

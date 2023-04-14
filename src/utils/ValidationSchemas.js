@@ -7,8 +7,8 @@ const loginSchema = Yup.object().shape({
     .min(6, 'Password is too short'),
 })
 
-const AddtodoSchema = Yup.object().shape({
+const todoSchema = Yup.object().shape({
   todo: Yup.string().required('This field is required.'),
 })
 
-export { loginSchema, AddtodoSchema }
+export { loginSchema, todoSchema }
