@@ -15,7 +15,7 @@ const HomeScreen: FC = () => {
   }, [])
   return (
     <>
-      <div className="home-gradient px-3 max-h-screen w-screen flex flex-col items-center">
+      <div className="home-gradient px-3 h-screen w-screen flex flex-col items-center">
         <h1 className="text-center text-2xl underline-offset-1 underline font-semibold text-[#b787c7] select-none mb-10 mt-5">
           My Todos.
         </h1>
@@ -27,10 +27,7 @@ const HomeScreen: FC = () => {
               <Loader className="animate-spin -ml-1 h-5 w-5 text-blue-200 mx-auto flex justify-end mr-10" />
             )}
           </div>
-          <div
-            style={{ scrollbarWidth: 'thin' }}
-            className="all-todos mt-7 max-h-screen overflow-y-scroll"
-          >
+          <div style={{ scrollbarWidth: 'thin' }} className="all-todos mt-7 ">
             {todos.map((i: Record<string, number & string>) => {
               return (
                 <TodoItem
